@@ -2,7 +2,7 @@
  * Basic Engine for the game.
  * Handles setup of the Canvas context and the main animation loop.
  */
-import { CONFIG } from './Constants.js';
+import { CONFIG } from '../utils/Constants.js';
 
 export class GameEngine {
     constructor() {

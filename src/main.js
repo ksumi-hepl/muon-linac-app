@@ -1,5 +1,5 @@
 import { GameEngine } from './core/Engine.js';
-import { GameStateManager } from './core/Game.js';
+import { GameStateManager } from './core/State.js';
 
 const engine = new GameEngine();
 const stateManager = new GameStateManager();
