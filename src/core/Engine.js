@@ -23,6 +23,9 @@ export class GameEngine {
             // logic update
             updateCallback();
             // draw
+            this.ctx.fillStyle = 'white';
+            this.ctx.font = '30px Arial';
+            this.ctx.fillText('Engine active - System Ready', 50, 100);
             requestAnimationFrame(loop);
         };
         requestAnimationFrame(loop);
