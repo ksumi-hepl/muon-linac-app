@@ -10,4 +10,10 @@ export const CONFIG = {
         couple: 'assets/images/couple_man_woman.png',
         background: 'assets/images/background.png',
     },
+    // Game Colors/Theme
+    colors: {
+        primary: '#4A90E2',
+        accent: '#FFD700',
+        gold: '#D4AF37'
+    }
 };
