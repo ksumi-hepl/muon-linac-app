@@ -4,5 +4,10 @@ export const CONFIG = {
     frameRate: 60,
     gravity: 0.01, // Placeholder for physics
     initialSpeed: 1,
-    // Future values will be populated from more specific files
+    // Assets
+    images: {
+        muon: 'assets/images/SM_antimuon-2.png',
+        couple: 'assets/images/couple_man_woman.png',
+        background: 'assets/images/background.png',
+    },
 };
