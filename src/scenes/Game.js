@@ -2,6 +2,8 @@
  * Game Scene
  * Contains the core "rhythm-based acceleration" logic.
  */
+import { ParticleSystem } from '../components/Particle.js';
+
 export class Game {
     constructor() {
         this.muon_x = 100;
@@ -48,9 +50,6 @@ export class Game {
         ctx.arc(this.muon_x, this.muon_y, 15, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw particles
-        this.particles.update();
-
         // 命中時のエフェクト生成（修正）
         this.notes.forEach(note => {
             if (!note.hit) {
@@ -59,12 +58,13 @@ export class Game {
                 if (distance < 5) {
                     this.particles.createExplosion(this.muon_x, this.muon_y,
                         distance < 5 ? '#FFD700' : '#FFFFFF');
+                    note.hit = true; // 命中したとしてマーク
                 }
-                note.hit = true; // 命中したとしてマーク
             }
         });
 
         // パーティクルの更新
         this.particles.update();
+        this.particles.draw(ctx);
     }
 }
