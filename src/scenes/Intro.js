@@ -5,7 +5,7 @@
 export class Intro {
     constructor(stateManager) {
         this.stateManager = stateManager;
-        this.message = "みゅーおんを届けよう！";
+        this.message = "ミューオンを\n届けよう！";
         this.subtext = "タップしてはじめる";
         this.timer = 0;
 
@@ -22,8 +22,8 @@ export class Intro {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.fillStyle = 'white';
         ctx.font = '40px Arial';
-        ctx.fillText(this.message, ctx.canvas.width / 2 - 150, ctx.canvas.height / 2 - 50);
+        ctx.fillText(this.message, (ctx.canvas.width - ctx.measureText(this.message).width) / 2, ctx.canvas.height / 2 - 50);
         ctx.font = '24px Arial';
-        ctx.fillText(this.subtext, ctx.canvas.width / 2 - 100, ctx.canvas.height / 2 + 50);
+        ctx.fillText(this.subtext, ctx.canvas.width / 2 - 100, ctx.canvas.height / 2 + 100);
     }
 }
