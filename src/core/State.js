@@ -19,19 +19,19 @@ export class GameStateManager {
         
         // Initialize scenes
         this.scenes = {
-            [States.INTRO]: new Intro(),
+            [States.INTRO]: new Intro(this),
             [States.PLAYING]: new Game(),
             [States.RESULT]: new Result()
         };
     }
 
-    update() {
+    update(ctx) {
         if (this.state === States.INTRO) {
-            this.scenes[States.INTRO].update();
+            this.scenes[States.INTRO].update(ctx);
         } else if (this.state === States.PLAYING) {
-            this.scenes[States.PLAYING].update();
+            this.scenes[States.PLAYING].update(ctx);
         } else if (this.state === States.RESULT) {
-            this.scenes[States.RESULT].update();
+            this.scenes[States.RESULT].update(ctx);
         }
     }
 

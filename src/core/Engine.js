@@ -21,7 +21,7 @@ export class GameEngine {
     start(updateCallback) {
         const loop = () => {
             // logic update
-            updateCallback();
+            updateCallback(this.ctx);
             // draw
             this.ctx.fillStyle = 'white';
             this.ctx.font = '30px Arial';
