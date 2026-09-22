@@ -2,7 +2,7 @@
  * Intro Scene
  * Includes title, simple explanation, and start button.
  */
-import background from '../assets/images/background.png';
+import background from '../../assets/images/background.png';
 
 export class Intro {
     constructor(stateManager) {
