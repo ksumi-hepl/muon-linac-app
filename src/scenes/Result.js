@@ -2,6 +2,8 @@
  * Result Scene
  * Displays final results and congratulatory message.
  */
+import background from '../assets/images/background.png';
+
 export class Result {
     constructor() {
         this.score = 0;
@@ -9,8 +11,9 @@ export class Result {
 
     update(ctx) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        ctx.fillStyle = '#000c1a';
-        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        
+        // Render background
+        ctx.drawImage(background, 0, 0, ctx.canvas.width, ctx.canvas.height);
         
         ctx.fillStyle = 'white';
         ctx.font = '40px Arial';
