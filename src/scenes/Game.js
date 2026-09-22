@@ -8,7 +8,8 @@ import background from '../assets/images/background.png';
 export class Game {
     constructor() {
         this.muon_x = 100;
-        this.muon_y = 300; // Adjusted to a centered position
+        this.muon_y = 0; // Will be updated based on canvas height in update
+
         this.acceleration = 0;
         this.beat_pos = 0;
         this.notes = [];
@@ -33,19 +34,25 @@ export class Game {
         // Dynamics update
         // mu_x moves slightly based on acceleration or other factors
         this.muon_x += Math.sin(this.beat_pos * 0.1) * 2;
+        this.muon_y = ctx.canvas.height / 2;
         
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.drawImage(background, 0, 0, ctx.canvas.width, ctx.canvas.height);
         
-        // Draw background
-        ctx.fillStyle = '#000c1a';
-        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
+        // Draw background (Optional: only if needed for atmosphere, not over the image)
+        // ctx.fillStyle = '#000c1a';
+        // ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        
         // Update and Draw notes
         this.notes.forEach(note => {
             if (!note.hit) {
                 // Move notes based on beat_pos or just a fixed progression
                 note.y += 2; 
+                
+                // Recyle note if out of bounds
+                if (note.y > ctx.canvas.height) {
+                    note.y = -100;
+                }
                 
                 // Draw note
                 ctx.fillStyle = '#4a90e2';

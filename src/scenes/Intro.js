@@ -25,7 +25,13 @@ export class Intro {
         ctx.drawImage(background, 0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.fillStyle = 'white';
         ctx.font = '40px Arial';
-        ctx.fillText(this.message, (ctx.canvas.width - ctx.measureText(this.message).width) / 2, ctx.canvas.height / 2 - 50);
+        
+        const lines = this.message.split('\n');
+        lines.forEach((line, index) => {
+            const x = (ctx.canvas.width - ctx.measureText(line).width) / 2;
+            ctx.fillText(line, x, (ctx.canvas.height / 2 - 50) + (index * 50));
+        });
+
         ctx.font = '24px Arial';
         ctx.fillText(this.subtext, ctx.canvas.width / 2 - 100, ctx.canvas.height / 2 + 100);
     }
