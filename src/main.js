@@ -5,12 +5,14 @@ const engine = new GameEngine();
 const stateManager = new GameStateManager();
 
 // The update function that the engine will call in its loop
-const update = () => {
-    stateManager.update();
+const update = (ctx) => {
+    stateManager.update(ctx);
 };
 
 // Start the game engine
-engine.start(update);
+engine.start((ctx) => {
+    stateManager.update(ctx);
+});
 
 // Basic interaction handling
 window.addEventListener('touchstart', (e) => {
