@@ -3,6 +3,7 @@
  * Contains the core "rhythm-based acceleration" logic.
  */
 import { ParticleSystem } from '../components/Particle.js';
+import background from '../assets/images/background.png';
 
 export class Game {
     constructor() {
@@ -29,6 +30,7 @@ export class Game {
 
     update(ctx) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.drawImage(background, 0, 0, ctx.canvas.width, ctx.canvas.height);
         
         // Draw background
         ctx.fillStyle = '#000c1a';

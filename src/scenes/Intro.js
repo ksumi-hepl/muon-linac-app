@@ -2,6 +2,8 @@
  * Intro Scene
  * Includes title, simple explanation, and start button.
  */
+import background from '../assets/images/background.png';
+
 export class Intro {
     constructor(stateManager) {
         this.stateManager = stateManager;
@@ -20,6 +22,7 @@ export class Intro {
 
     update(ctx) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.drawImage(background, 0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.fillStyle = 'white';
         ctx.font = '40px Arial';
         ctx.fillText(this.message, (ctx.canvas.width - ctx.measureText(this.message).width) / 2, ctx.canvas.height / 2 - 50);
