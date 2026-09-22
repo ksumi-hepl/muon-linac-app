@@ -2,7 +2,7 @@
  * Result Scene
  * Displays final results and congratulatory message.
  */
-import background from '../assets/images/background.png';
+import background from '../../assets/images/background.png';
 
 export class Result {
     constructor() {
