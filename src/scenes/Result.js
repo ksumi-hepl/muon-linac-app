@@ -2,7 +2,8 @@
  * Result Scene
  * Displays final results and congratulatory message.
  */
-import background from '../../assets/images/background.png';
+const background = new Image();
+background.src = './assets/images/background.png';
 
 export class Result {
     constructor() {

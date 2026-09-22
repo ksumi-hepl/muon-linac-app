@@ -3,7 +3,9 @@
  * Contains the core "rhythm-based acceleration" logic.
  */
 import { ParticleSystem } from '../components/Particle.js';
-import background from '../../assets/images/background.png';
+
+const background = new Image();
+background.src = './assets/images/background.png';
 
 export class Game {
     constructor() {
